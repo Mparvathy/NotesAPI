@@ -8,21 +8,36 @@ namespace WebApplication1
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Get PostgreSQL connection string
+            // Render uses port 10000
+            builder.WebHost.UseUrls("http://0.0.0.0:10000");
+
+
+            // PostgreSQL Connection
             var connectionString = builder.Configuration
                 .GetConnectionString("PostgresConnection");
+
 
             // Services
             builder.Services.AddAuthorization();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+
             var app = builder.Build();
 
 
-            // Enable Swagger in all environments
+            // Swagger Enable (Production + Development)
             app.UseSwagger();
-            app.UseSwaggerUI();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint(
+                    "/swagger/v1/swagger.json",
+                    "Notes API V1"
+                );
+
+                c.RoutePrefix = "swagger";
+            });
 
 
             app.UseHttpsRedirection();
@@ -30,11 +45,12 @@ namespace WebApplication1
             app.UseAuthorization();
 
 
-            // Health Check API
+            // Health Check
             app.MapGet("/", () =>
             {
                 return "Notes API is running";
             });
+
 
 
             // POST Splash API
@@ -46,6 +62,7 @@ namespace WebApplication1
 
                     conn.Open();
 
+
                     string sql = @"
                         SELECT application_number, ver
                         FROM splashData
@@ -53,6 +70,7 @@ namespace WebApplication1
 
 
                     using var cmd = new NpgsqlCommand(sql, conn);
+
 
                     cmd.Parameters.AddWithValue(
                         "@applicationNumber",
@@ -67,8 +85,11 @@ namespace WebApplication1
                     {
                         return Results.Ok(new
                         {
-                            ApplicationNumber = reader["application_number"].ToString(),
-                            Version = reader["ver"].ToString()
+                            ApplicationNumber =
+                                reader["application_number"].ToString(),
+
+                            Version =
+                                reader["ver"].ToString()
                         });
                     }
 
@@ -92,9 +113,11 @@ namespace WebApplication1
             .WithOpenApi();
 
 
+
             app.Run();
         }
     }
+
 
 
     // Request Model
