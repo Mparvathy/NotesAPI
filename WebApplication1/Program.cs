@@ -8,7 +8,7 @@ namespace WebApplication1
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Get PostgreSQL connection string from appsettings.json
+            // Get PostgreSQL connection string
             var connectionString = builder.Configuration
                 .GetConnectionString("PostgresConnection");
 
@@ -19,16 +19,22 @@ namespace WebApplication1
 
             var app = builder.Build();
 
-            // Swagger
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+
+            // Enable Swagger in all environments
+            app.UseSwagger();
+            app.UseSwaggerUI();
+
 
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+
+
+            // Health Check API
+            app.MapGet("/", () =>
+            {
+                return "Notes API is running";
+            });
 
 
             // POST Splash API
