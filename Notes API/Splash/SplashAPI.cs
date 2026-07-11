@@ -1,33 +1,49 @@
 ﻿using Npgsql;
 using WebApplication1.Services;
 
+
 namespace WebApplication1.Splash
 {
     public class SplashAPI
     {
+
         private readonly string _connectionString;
+
         private readonly TokenService _tokenService;
+
+        private readonly JwtCacheService _jwtCache;
+
 
 
         public SplashAPI(
             IConfiguration configuration,
-            TokenService tokenService)
+            TokenService tokenService,
+            JwtCacheService jwtCache)
         {
+
             _connectionString =
-                configuration.GetConnectionString("PostgresConnection")
+                configuration
+                .GetConnectionString("PostgresConnection")
                 ?? string.Empty;
 
+
             _tokenService = tokenService;
+
+            _jwtCache = jwtCache;
+
         }
+
 
 
 
         public async Task<IResult> GetSplash(
             SplashRequest request)
         {
+
             try
             {
-                // Request Validation
+
+
                 if (request == null)
                 {
                     return Results.BadRequest(new
@@ -38,24 +54,16 @@ namespace WebApplication1.Splash
                 }
 
 
-                if (string.IsNullOrWhiteSpace(request.Type))
-                {
-                    return Results.BadRequest(new
-                    {
-                        Status = "Failed",
-                        Message = "Type is required"
-                    });
-                }
-
 
                 if (request.Type != "SplashRequest")
                 {
                     return Results.BadRequest(new
                     {
                         Status = "Failed",
-                        Message = "Invalid request type"
+                        Message = "Invalid type"
                     });
                 }
+
 
 
                 if (request.Ver <= 0)
@@ -63,24 +71,15 @@ namespace WebApplication1.Splash
                     return Results.BadRequest(new
                     {
                         Status = "Failed",
-                        Message = "Version is required"
-                    });
-                }
-
-
-                if (string.IsNullOrWhiteSpace(request.ApplicationNumber))
-                {
-                    return Results.BadRequest(new
-                    {
-                        Status = "Failed",
-                        Message = "Application number is required"
+                        Message = "Invalid version"
                     });
                 }
 
 
 
                 using var conn =
-                    new NpgsqlConnection(_connectionString);
+                    new NpgsqlConnection(
+                        _connectionString);
 
 
                 await conn.OpenAsync();
@@ -88,14 +87,15 @@ namespace WebApplication1.Splash
 
 
                 string sql = @"
-                    SELECT application_number, ver
-                    FROM splashData
-                    WHERE application_number = @applicationNumber";
+                SELECT application_number,ver
+                FROM splashData
+                WHERE application_number=@applicationNumber";
 
 
 
                 using var cmd =
                     new NpgsqlCommand(sql, conn);
+
 
 
                 cmd.Parameters.AddWithValue(
@@ -114,48 +114,58 @@ namespace WebApplication1.Splash
                     return Results.NotFound(new
                     {
                         Status = "Failed",
-                        Message = "Application number not found"
+                        Message = "Data not found"
                     });
                 }
 
 
-
-                // Generate JWT only on success
                 var token =
                     _tokenService.GenerateToken();
 
+                _jwtCache.SetToken(token);
 
 
-                // ONLY HERE STATUS 200
-                return Results.Ok(new SplashResponse
-                {
-                    JwtToken = token,
 
-                    Data = new SplashData
+
+                return Results.Ok(
+                    new SplashResponse
                     {
-                        Status = "Successful",
 
-                        Message = "Splash loaded",
+                        JwtToken = token,
 
-                        ApplicationNumber =
+
+                        Data = new SplashData
+                        {
+
+                            Status = "Successful",
+
+                            Message = "Splash loaded",
+
+
+                            ApplicationNumber =
                             reader["application_number"]
-                            .ToString(),
+                            .ToString()!,
 
-                        Version =
+
+                            Version =
                             reader["ver"]
-                            .ToString()
-                    }
-                });
+                            .ToString()!
+
+                        }
+
+                    });
 
 
             }
             catch (Exception ex)
             {
+
                 return Results.Problem(
-                    detail: ex.Message,
-                    title: "Internal Server Error"
-                );
+                    ex.Message);
+
             }
+
         }
+
     }
 }

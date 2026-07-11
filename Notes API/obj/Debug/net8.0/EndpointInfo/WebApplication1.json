@@ -5,11 +5,12 @@
     "version": "1.0"
   },
   "paths": {
-    "/": {
+    "/health": {
       "get": {
         "tags": [
           "WebApplication1"
         ],
+        "operationId": "Health",
         "responses": {
           "200": {
             "description": "OK",
@@ -46,10 +47,59 @@
           }
         }
       }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "WebApplication1"
+        ],
+        "operationId": "Login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "LoginRequest": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "ver": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "jwtToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "SplashRequest": {
         "type": "object",
         "properties": {

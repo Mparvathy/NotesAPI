@@ -2,7 +2,7 @@
   {
     "ContainingType": "WebApplication1.Program\u002B\u003C\u003Ec",
     "Method": "\u003CMain\u003Eb__0_1",
-    "RelativePath": "",
+    "RelativePath": "health",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
@@ -15,7 +15,31 @@
         ],
         "StatusCode": 200
       }
-    ]
+    ],
+    "EndpointName": "Health"
+  },
+  {
+    "ContainingType": "WebApplication1.Program\u002B\u003C\u003Ec",
+    "Method": "\u003CMain\u003Eb__0_3",
+    "RelativePath": "login",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebApplication1.Login.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "Login"
   },
   {
     "ContainingType": "WebApplication1.Program\u002B\u003C\u003Ec",

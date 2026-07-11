@@ -7,21 +7,28 @@ namespace WebApplication1.Services
 {
     public class TokenService
     {
-        private readonly string secretKey = "NotesAPISecretKey123456789012345";
+
+        private readonly string secretKey =
+            "NotesAPISecretKey123456789012345";
+
 
         public string GenerateToken()
         {
-            var securityKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(secretKey)
-            );
 
-            var credentials = new SigningCredentials(
-                securityKey,
-                SecurityAlgorithms.HmacSha256
-            );
+            var securityKey =
+                new SymmetricSecurityKey(
+                    Encoding.UTF8.GetBytes(secretKey)
+                );
 
 
-            var claims = new List<Claim>
+            var credentials =
+                new SigningCredentials(
+                    securityKey,
+                    SecurityAlgorithms.HmacSha256
+                );
+
+
+            var claims = new[]
             {
                 new Claim(
                     JwtRegisteredClaimNames.Sub,
@@ -35,17 +42,25 @@ namespace WebApplication1.Services
             };
 
 
-            var token = new JwtSecurityToken(
-                issuer: "NotesAPI",
-                audience: "NotesApp",
-                claims: claims,
-                expires: DateTime.UtcNow.AddHours(1),
-                signingCredentials: credentials
-            );
+            var token =
+                new JwtSecurityToken(
+
+                    issuer: "NotesAPI",
+
+                    audience: "NotesApp",
+
+                    claims: claims,
+
+                    expires:
+                    DateTime.UtcNow.AddHours(1),
+
+                    signingCredentials: credentials
+                );
 
 
             return new JwtSecurityTokenHandler()
                 .WriteToken(token);
+
         }
     }
 }
