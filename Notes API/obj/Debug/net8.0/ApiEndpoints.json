@@ -1,26 +1,7 @@
 [
   {
     "ContainingType": "WebApplication1.Program\u002B\u003C\u003Ec",
-    "Method": "\u003CMain\u003Eb__0_1",
-    "RelativePath": "health",
-    "HttpMethod": "GET",
-    "IsController": false,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "Health"
-  },
-  {
-    "ContainingType": "WebApplication1.Program\u002B\u003C\u003Ec",
-    "Method": "\u003CMain\u003Eb__0_3",
+    "Method": "\u003CMain\u003Eb__0_2",
     "RelativePath": "login",
     "HttpMethod": "POST",
     "IsController": false,
@@ -43,7 +24,30 @@
   },
   {
     "ContainingType": "WebApplication1.Program\u002B\u003C\u003Ec",
-    "Method": "\u003CMain\u003Eb__0_2",
+    "Method": "\u003CMain\u003Eb__0_3",
+    "RelativePath": "Register",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebApplication1.Register.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "Register"
+  },
+  {
+    "ContainingType": "WebApplication1.Program\u002B\u003C\u003Ec",
+    "Method": "\u003CMain\u003Eb__0_1",
     "RelativePath": "splash",
     "HttpMethod": "POST",
     "IsController": false,

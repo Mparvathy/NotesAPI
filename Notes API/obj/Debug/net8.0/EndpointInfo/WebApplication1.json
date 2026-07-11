@@ -5,26 +5,6 @@
     "version": "1.0"
   },
   "paths": {
-    "/health": {
-      "get": {
-        "tags": [
-          "WebApplication1"
-        ],
-        "operationId": "Health",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/splash": {
       "post": {
         "tags": [
@@ -70,6 +50,29 @@
           }
         }
       }
+    },
+    "/Register": {
+      "post": {
+        "tags": [
+          "WebApplication1"
+        ],
+        "operationId": "Register",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -90,6 +93,44 @@
             "nullable": true
           },
           "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterRequest": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "ver": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "jwtToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
             "type": "string",
             "nullable": true
           },

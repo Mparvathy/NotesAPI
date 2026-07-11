@@ -3,40 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|c:\\users\\hp\\desktop\\personal\\flutter applications\\notes api\\login\\loginapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|solutionrelative:login\\loginapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|c:\\users\\hp\\desktop\\personal\\flutter applications\\notes api\\login\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|solutionrelative:login\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|c:\\users\\hp\\desktop\\personal\\flutter applications\\notes api\\splash\\splashrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|solutionrelative:splash\\splashrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|c:\\users\\hp\\desktop\\personal\\flutter applications\\notes api\\services\\jwtcacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|solutionrelative:services\\jwtcacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|c:\\users\\hp\\desktop\\personal\\flutter applications\\notes api\\login\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|solutionrelative:login\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|c:\\users\\hp\\desktop\\personal\\flutter applications\\notes api\\register\\registerapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|solutionrelative:register\\registerapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|c:\\users\\hp\\desktop\\personal\\flutter applications\\notes api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|c:\\users\\hp\\desktop\\personal\\flutter applications\\notes api\\splash\\splashapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|solutionrelative:splash\\splashapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|c:\\users\\hp\\desktop\\personal\\flutter applications\\notes api\\register\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|solutionrelative:register\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|c:\\users\\hp\\desktop\\personal\\flutter applications\\notes api\\services\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|solutionrelative:services\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|c:\\users\\hp\\desktop\\personal\\flutter applications\\notes api\\splash\\splashresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|solutionrelative:splash\\splashresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|c:\\users\\hp\\desktop\\personal\\flutter applications\\notes api\\register\\registerresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB0843CA-35F7-449B-B4DB-86369378A7FA}|WebApplication1.csproj|solutionrelative:register\\registerresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,117 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoginAPI.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Login\\LoginAPI.cs",
-              "RelativeDocumentMoniker": "Login\\LoginAPI.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Login\\LoginAPI.cs",
-              "RelativeToolTip": "Login\\LoginAPI.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAowB0AAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T11:04:25.328Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "JwtCacheService.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Services\\JwtCacheService.cs",
-              "RelativeDocumentMoniker": "Services\\JwtCacheService.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Services\\JwtCacheService.cs",
-              "RelativeToolTip": "Services\\JwtCacheService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T09:45:06.44Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAIwGQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAQwD8AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T09:44:04.544Z"
+              "WhenOpened": "2026-07-11T13:21:47.896Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "token.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Services\\token.cs",
-              "RelativeDocumentMoniker": "Services\\token.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Services\\token.cs",
-              "RelativeToolTip": "Services\\token.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAmwEEAAAABAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "RegisterResponse.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Register\\RegisterResponse.cs",
+              "RelativeDocumentMoniker": "Register\\RegisterResponse.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Register\\RegisterResponse.cs",
+              "RelativeToolTip": "Register\\RegisterResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T09:43:48.537Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SplashResponse.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Splash\\SplashResponse.cs",
-              "RelativeDocumentMoniker": "Splash\\SplashResponse.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Splash\\SplashResponse.cs",
-              "RelativeToolTip": "Splash\\SplashResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T09:43:10.486Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SplashAPI.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Splash\\SplashAPI.cs",
-              "RelativeDocumentMoniker": "Splash\\SplashAPI.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Splash\\SplashAPI.cs",
-              "RelativeToolTip": "Splash\\SplashAPI.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAmwHoAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T09:42:54.765Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoginResponse.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Login\\LoginResponse.cs",
-              "RelativeDocumentMoniker": "Login\\LoginResponse.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Login\\LoginResponse.cs",
-              "RelativeToolTip": "Login\\LoginResponse.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA8wCIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T09:29:11.425Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginRequest.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Login\\LoginRequest.cs",
-              "RelativeDocumentMoniker": "Login\\LoginRequest.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Login\\LoginRequest.cs",
-              "RelativeToolTip": "Login\\LoginRequest.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T09:28:40.394Z",
+              "WhenOpened": "2026-07-11T12:41:15.4Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SplashRequest.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Splash\\SplashRequest.cs",
-              "RelativeDocumentMoniker": "Splash\\SplashRequest.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Splash\\SplashRequest.cs",
-              "RelativeToolTip": "Splash\\SplashRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Title": "RegisterRequest.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Register\\RegisterRequest.cs",
+              "RelativeDocumentMoniker": "Register\\RegisterRequest.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Register\\RegisterRequest.cs",
+              "RelativeToolTip": "Register\\RegisterRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-11T09:43:11.291Z",
+              "WhenOpened": "2026-07-11T12:40:46.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RegisterAPI.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Register\\RegisterAPI.cs",
+              "RelativeDocumentMoniker": "Register\\RegisterAPI.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Personal\\Flutter Applications\\Notes API\\Register\\RegisterAPI.cs",
+              "RelativeToolTip": "Register\\RegisterAPI.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwBkAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-11T12:40:18.13Z",
               "EditorCaption": ""
             }
           ]

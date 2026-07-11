@@ -1,15 +1,16 @@
 ﻿using Npgsql;
 using WebApplication1.Services;
 
-namespace WebApplication1.Login
+namespace WebApplication1.Register
 {
-    public class LoginAPI
+    public class RegisterAPI
     {
+
         private readonly string _connectionString;
         private readonly JwtCacheService _jwtCache;
         private readonly TokenService _tokenService;
 
-        public LoginAPI(
+        public RegisterAPI(
             IConfiguration configuration,
             JwtCacheService jwtCache,
             TokenService tokenService)
@@ -22,11 +23,11 @@ namespace WebApplication1.Login
             _tokenService = tokenService;
         }
 
-        public async Task<IResult> Login(LoginRequest request)
+        public async Task<IResult> Register(RegisterRequest request)
         {
             try
             {
-      
+
                 if (request == null)
                 {
                     return Results.BadRequest(new
@@ -48,7 +49,7 @@ namespace WebApplication1.Login
 
 
                 // Request  Validation
-                if (request.Type != "LoginRequest")
+                if (request.Type != "RegisterRequest")
                 {
                     return Results.BadRequest(new
                     {
@@ -105,6 +106,37 @@ namespace WebApplication1.Login
                         statusCode: StatusCodes.Status401Unauthorized
                     );
                 }
+
+                // Name Validation
+                if (string.IsNullOrWhiteSpace(request.Name))
+                {
+                    return Results.BadRequest(new
+                    {
+                        Status = "Failed",
+                        Message = "Name is required"
+                    });
+                }
+
+                // Email Validation
+                if (string.IsNullOrWhiteSpace(request.Email))
+                {
+                    return Results.BadRequest(new
+                    {
+                        Status = "Failed",
+                        Message = "Email is required"
+                    });
+                }
+
+                // Phone Validation
+                if (string.IsNullOrWhiteSpace(request.Phone))
+                {
+                    return Results.BadRequest(new
+                    {
+                        Status = "Failed",
+                        Message = "Phone is required"
+                    });
+                }
+
                 // Username Validation
                 if (string.IsNullOrWhiteSpace(request.Username))
                 {
@@ -129,43 +161,78 @@ namespace WebApplication1.Login
 
                 await conn.OpenAsync();
 
-                string sql = @"
-                    SELECT
-                        name,
-                        username,
-                        email,
-                        phone
-                    FROM users
-                    WHERE username=@username
-                    AND password=@password";
+                string checkSql = @"
+                        SELECT COUNT(*)
+                        FROM users
+                        WHERE username=@username
+                        OR email=@email
+                        OR phone=@phone";
 
-                using var cmd = new NpgsqlCommand(sql, conn);
+                using var checkCmd = new NpgsqlCommand(checkSql, conn);
 
-                cmd.Parameters.AddWithValue("@username", request.Username);
-                cmd.Parameters.AddWithValue("@password", request.Password);
+                checkCmd.Parameters.AddWithValue("@username", request.Username);
+                checkCmd.Parameters.AddWithValue("@email", request.Email);
+                checkCmd.Parameters.AddWithValue("@phone", request.Phone);
 
-                using var reader = await cmd.ExecuteReaderAsync();
+                int count = Convert.ToInt32(await checkCmd.ExecuteScalarAsync());
 
-                if (!await reader.ReadAsync())
+                if (count > 0)
                 {
                     return Results.BadRequest(new
                     {
                         Status = "Failed",
-                        Message = "Invalid username or password"
+                        Message = "Username, Email or Phone already exists"
                     });
                 }
 
-                return Results.Ok(new LoginResponse
-                {
-                    JwtToken = request.JwtToken,
 
-                    Data = new LoginData
+                // Insert User
+
+                                            string insertSql = @"
+                            INSERT INTO users
+                            (
+                                name,
+                                username,
+                                email,
+                                phone,
+                                password
+                            )
+                            VALUES
+                            (
+                                @name,
+                                @username,
+                                @email,
+                                @phone,
+                                @password
+                            )";
+
+                using var insertCmd = new NpgsqlCommand(insertSql, conn);
+
+                insertCmd.Parameters.AddWithValue("@name", request.Name);
+                insertCmd.Parameters.AddWithValue("@username", request.Username);
+                insertCmd.Parameters.AddWithValue("@email", request.Email);
+                insertCmd.Parameters.AddWithValue("@phone", request.Phone);
+                insertCmd.Parameters.AddWithValue("@password", request.Password);
+
+                await insertCmd.ExecuteNonQueryAsync();
+
+                var newToken = _tokenService.GenerateToken();
+
+                _jwtCache.SetToken(newToken);
+
+
+                return Results.Ok(new RegisterResponse
+                {
+                    JwtToken = newToken,
+
+                    Data = new RegisterData
                     {
                         Status = "Successful",
-                        Message = "Login successful",
-                        Name = reader["name"].ToString() ?? "",
-                        Email = reader["email"].ToString() ?? "",
-                        Phone = reader["phone"].ToString() ?? ""
+                        Message = "Register successful",
+                        Name = request.Name,
+                        Username = request.Username,
+                        Email = request.Email,
+                        Phone = request.Phone
                     }
                 });
             }
